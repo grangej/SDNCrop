@@ -51,6 +51,7 @@ class CropView: UIView {
     }
     
     var aspectRatioLockEnabled = false
+    var lockedMinZoomScale: Bool = false
 
     // Referred to in extension
     let imageContainer: ImageContainer
@@ -414,6 +415,11 @@ extension CropView {
                                         to: self.scrollView.imageContainer)
             self.scrollView.zoom(to: zoomRect, animated: false)
             self.scrollView.checkContentOffset()
+
+            if lockedMinZoomScale {
+
+                self.scrollView.minimumZoomScale = self.scrollView.zoomScale
+            }
         }
         
         if animation {

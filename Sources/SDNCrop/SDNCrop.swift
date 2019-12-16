@@ -29,6 +29,8 @@ public struct Config {
 
     public var showRotationDial = true
 
+    public var lockedMinZoomScale: Bool = false
+    
     public init() {
     }
 

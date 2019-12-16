@@ -198,6 +198,7 @@ public class CropViewController: UIViewController {
         }
         cropView.delegate = self
         cropView.clipsToBounds = true
+        cropView.lockedMinZoomScale = config.lockedMinZoomScale
         
         if case .alwaysUsingOnePresetFixedRatio = config.presetFixedRatioType {
             cropView.forceFixedRatio = true
